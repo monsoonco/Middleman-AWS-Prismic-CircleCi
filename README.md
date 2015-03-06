@@ -2,8 +2,8 @@
 
 Middleman AWS Prismic CircleCi
 =================
-
-
+Welcome to our Middleman-AWS-Prismic-CircleCi open source project!
+We've used this lovely setup for creating these live projects at Monsoon: [LunaSleep](http://lunasleep.com/), [Swypcard](https://www.swypcard.com/), [San Francisco Exploratorium](www.google.com)
 
 ## Ingredients
 * [Middleman](https://middlemanapp.com/)
@@ -17,6 +17,9 @@ Middleman AWS Prismic CircleCi
 ## Table of Contents
 * [Running the local web server](#web_server)
 * [Create a new Middleman Site](#new_middleman_project)
+* [Get AWS access keys and Attach a Policy in AWS Identity & Access Management](#aws_iam)
+* [Setup an AWS S3 Bucket](#aws_s3)
+* [Add on Amazon Cloudfront content delivery web service](#aws_cloudfront)
 * Deploy to AWS S3 and Cloudfront Setup with CircleCi
 * Prismic: Creating Documents
 * Prismic Webhook: Trigger a build in CircleCi everytime there's a change in content
@@ -41,4 +44,14 @@ Middleman AWS Prismic CircleCi
 -------------
 
 1. Follow steps to [install Middleman](https://middlemanapp.com/basics/install/) and [start a new site](https://middlemanapp.com/basics/start_new_site/)
+
+
+<a name="aws_iam"></a>Get AWS access keys and Attach a Policy in AWS Identity & Access Management
+-------------
+
+
+<a name="aws_s3"></a> Setup an AWS S3 Bucket
+-------------
+
+
 
