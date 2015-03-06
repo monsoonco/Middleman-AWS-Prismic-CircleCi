@@ -12,17 +12,15 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 * [CircleCI](https://circleci.com/) for continuous integration
 * [Prismic](https://prismic.io/) for Content Management
 
-**Instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic from scratch.**
+**The following are instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic from scratch.**
 
 ## Table of Contents
 * [Running the local web server](#web_server)
 * [Create a new Middleman Site](#new_middleman_project)
-* [Get AWS access keys and Attach a Policy in AWS Identity & Access Management](#aws_iam)
+* [Get AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)](#aws_iam)
 * [Setup an AWS S3 Bucket](#aws_s3)
 * [Add on Amazon Cloudfront content delivery web service](#aws_cloudfront)
-* Deploy to AWS S3 and Cloudfront Setup with CircleCi
-* Prismic: Creating Documents
-* Prismic Webhook: Trigger a build in CircleCi everytime there's a change in content
+* Prismic: Creating Documents and adding a Webhook with CircleCi
 * Launch Day in AWS
 
 <a name="web_server"></a> Running the local web server
@@ -46,12 +44,25 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 1. Follow steps to [install Middleman](https://middlemanapp.com/basics/install/) and [start a new site](https://middlemanapp.com/basics/start_new_site/)
 
 
-<a name="aws_iam"></a>Get AWS access keys and Attach a Policy in AWS Identity & Access Management
+<a name="aws_iam"></a>Grab AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)
 -------------
 
+1. After an AWS account has been setup, go to AWS IAM
 
 <a name="aws_s3"></a> Setup an AWS S3 Bucket
 -------------
+
+1. **Create a S3 Bucket**
+   Go to Services > S3.  Create a Bucket in S3, add a meaningful name (e.g. myappname-production)
+   and region option, e.g. Northern California).
+
+   Once you choose a region, search region codes here:
+   http://www.bucketexplorer.com/documentation/amazon-s3--amazon-s3-buckets-and-regions.html
+   You will need to add your region property in **config.rb** in the [Setup an AWS S3 Bucket](#aws_s3) step.
+
+2. **Enable Static Website Hosting**
+    Go to your bucket and click **Properties**.  Under **Static Website Hosting**, click **Enable website hosting**
+    and add **index.html** in Index Document and **error.html** in Error Document. **Save.**
 
 
 
