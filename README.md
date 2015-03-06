@@ -1,4 +1,4 @@
-![alt text](/README_Images/monsoon_.png)
+[![alt text](/README_Images/monsoon_.png)](http://www.monsoonco.com/)
 
 Middleman AWS Prismic CircleCi
 =================
