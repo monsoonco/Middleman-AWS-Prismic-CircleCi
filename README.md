@@ -9,7 +9,7 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 * [Middleman](https://middlemanapp.com/)
 * Middleman gems [Middleman S3 Sync](https://github.com/fredjean/middleman-s3_sync) and [Middleman Cloudfront](https://github.com/andrusha/middleman-cloudfront)
 * [AWS S3](http://aws.amazon.com/s3/) and [AWS Cloudfront](http://aws.amazon.com/cloudfront/)
-* [CircleCI](https://circleci.com/) for continuous integration
+* [CircleCI](https://circleci.com/) as a continuous integration platform for deployment to AWS and for automated testing
 * [Prismic](https://prismic.io/) for Content Management
 
 **The following are instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic from scratch.**
@@ -23,8 +23,7 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 * Prismic: Creating Documents and adding a Webhook with CircleCi
 * Launch Day in AWS
 
-<a name="web_server"></a> Running the local web server
--------------
+<a name="web_server"></a> ### Running the local web server
 
 1. **Bundle Gems**
 
@@ -38,19 +37,16 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 
   <code> bundle exec middleman </code>
 
-<a name="new_middleman_project"></a> Create a new Middleman site
--------------
+<a name="new_middleman_project"></a> ### Create a new Middleman site
 
 1. Follow steps to [install Middleman](https://middlemanapp.com/basics/install/) and [start a new site](https://middlemanapp.com/basics/start_new_site/)
 
 
-<a name="aws_iam"></a>Grab AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)
--------------
+<a name="aws_iam"></a> ### Grab AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)
 
 1. After an AWS account has been setup, go to AWS IAM
 
-<a name="aws_s3"></a> Setup an AWS S3 Bucket
--------------
+<a name="aws_s3"></a> ### Setup an AWS S3 Bucket
 
 1. **Create a S3 Bucket**
    Go to Services > S3.  Create a Bucket in S3, add a meaningful name (e.g. myappname-production)
@@ -58,6 +54,7 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 
    Once you choose a region, search region codes here:
    http://www.bucketexplorer.com/documentation/amazon-s3--amazon-s3-buckets-and-regions.html
+
    You will need to add your region property in **config.rb** in the [Setup an AWS S3 Bucket](#aws_s3) step.
 
 2. **Enable Static Website Hosting**
