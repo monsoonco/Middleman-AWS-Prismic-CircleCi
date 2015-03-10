@@ -20,8 +20,8 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 3. [Get AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)](#aws_iam)
 4. [Setup an AWS S3 Bucket](#aws_s3)
 5. [Create an AWS Cloudfront Distribution](#aws_cloudfront)
-6. [Add Middleman s3 sync gem](#aws_middleman_s3_gem)
-7. [Add Middleman cloudfront gem](#aws_middleman_cloudfront_gem)
+6. [Add Middleman s3 sync gem with configuration](#aws_middleman_s3_gem)
+7. [Add Middleman cloudfront gem with configuration](#aws_middleman_cloudfront_gem)
 8. [Pushing assets to AWS from your console as a first test](#aws_local_test)
 9. [CircleCI for testing and application deployment](#circleci)
 10. [Set Environmental Variables in CircleCi](#circleci_vars)
@@ -107,7 +107,7 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 4. You’ll be brought to a CloudFront Distributions page.  Copy the domain name (e.g. http://dXXXXXXXXXXX.cloudfront.net/).  This will be your cloudfront asset url.
 
 
-<a name="aws_middleman_s3_gem"></a> Add Middleman s3 sync gem
+<a name="aws_middleman_s3_gem"></a> 6. Add middleman s3 sync gem with configuration
 -------------
 
 Use middeman-s3_sync gem to push assets to your AWS s3 bucket.
@@ -115,7 +115,7 @@ Use middeman-s3_sync gem to push assets to your AWS s3 bucket.
 Add [middleman-s3_sync gem](https://github.com/fredjean/middleman-s3_sync) in your Gemfile and follow configuration instructions.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb).
 
 
-<a name="aws_middleman_cloudfront_gem"></a> Add Middleman cloudfront gem
+<a name="aws_middleman_cloudfront_gem"></a> 7. Add middleman cloudfront gem with configuration
 -------------
 
 We're using middleman-cloudfront for AWS CloudFront cache invalidation.
@@ -125,7 +125,7 @@ Add [middleman-cloudfront gem](https://github.com/andrusha/middleman-cloudfront)
 You can watch invalidations processing if you go to CloudFront Distributions > Click on Cloudfront distribution ID > Invalidations tab
 
 
-<a name="aws_local_test"></a> Pushing assets to AWS from your console as a first test
+<a name="aws_local_test"></a> 8. Pushing assets to AWS from your console as a first test
 -------------
 
 If you need to experiment with pushing assets to AWS S3 locally, you can do the following:
@@ -154,7 +154,7 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
    <code> PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID=XXXXXXXXXXX bundle exec middleman invalidate </code>
 
 
-<a name="circleci"></a> CircleCI for testing and application deployment
+<a name="circleci"></a> 9. CircleCI for testing and application deployment
 -------------
 
 1. Setup your Github account with [CircleCi](https://circleci.com/).
@@ -183,26 +183,25 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 </code></pre>
 
-<a name="prismic"></a> Prismic Content Management and Adding a Webhook with CircleCi
+<a name="prismic"></a> 10. Prismic Content Management and Adding a Webhook with CircleCi
 -------------
 
-1. Follow instructions in Prismic to create a Document Mask and create content.
+1. Follow instructions in [Prismic](https://prismic.io/) to create a Document Mask and create content.
 
 2. In this example, we're using ruby to add Prismic Content to view.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb) as an example.
 
 3. Go to your prismic account.  Settings > Webhooks.
 
-  Additional resources:
-
-  * [Introducing prismic.io webhooks: integration with publishing and changes events](https://blog.prismic.io/U4SxWjAAAC8AQ1-W/introducing-prismicio-webhooks-integration-with-publishing-and-changes-events)
-  * [Prismic Webhooks](https://developers.prismic.io/documentation/UjBeuLGIJ3EKtgBV/repository-administrators-manual#webhooks)
-  * [CircleCi: Trigger a new build](https://circleci.com/docs/api#new-build)
+4. Go to CircleCi and create an API token (Settings > API Tokens  in CircleCi). Create a token for the prismic webhook.
 
 4. Add a POST request url from CircleCI to trigger a build in CircleCi everytime someone updates content in Prismic. CircleCi enables you to trigger a build with the following params:
 
   **https://circleci.com/api/v1/project/:username/:project/tree/:branch?circle-token=:token**
 
-  ![Alt text](images_for_readme/prismic_circle_ci_webhook.png)
+  Docomentation resources for creating a webhook:
 
-  * **Create an API token**. Go to your account > Settings > API Tokens  in CircleCi.  Create a token for the prismic webhook.
+  * [Introducing prismic.io webhooks: integration with publishing and changes events](https://blog.prismic.io/U4SxWjAAAC8AQ1-W/introducing-prismicio-webhooks-integration-with-publishing-and-changes-events)
+  * [Prismic Webhooks](https://developers.prismic.io/documentation/UjBeuLGIJ3EKtgBV/repository-administrators-manual#webhooks)
+  * [CircleCi: Trigger a new build](https://circleci.com/docs/api#new-build)
+
 
