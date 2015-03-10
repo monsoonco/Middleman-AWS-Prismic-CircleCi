@@ -1,0 +1,16 @@
+dependencies:
+  pre:
+    - bundle install
+
+# To speed things up, you can also cache directories.  Uncomment this and replace this with code above.
+# dependencies:
+#   cache_directories:
+#     - "~/.rvm/gems/ruby-2.0.0-p451"
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle exec middleman build --verbose
+      - bundle exec middleman s3_sync --bucket=middleman-sandbox-production
+      - PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID= bundle exec middleman invalidate
