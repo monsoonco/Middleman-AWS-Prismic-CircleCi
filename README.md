@@ -60,7 +60,7 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 
 <a name="aws_s3"></a> 4. Setup an AWS S3 Bucket
 -------------
-
+![Alt text](README_Images/aws_S3_logo.png)
 1. **Create a S3 Bucket**
    Go to Services > S3.  Create a Bucket in S3, add a meaningful name (e.g. myappname-production)
    and region option, e.g. Northern California).
@@ -85,8 +85,11 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 
 <a name="aws_cloudfront"></a> 5. Create an AWS Cloudfront Distribution
 -------------
+![Alt text](README_Images/aws_cloudfront_logo.png)
 
-1. Go to Services > Cloudfront
+1. **Create a Cloudfront Distribution**
+  Go to Services > Cloudfront
+  ![Alt text](README_Images/aws_cloudfront_logo.png)
 
 2. Select "Web" as your delivery method:
 
