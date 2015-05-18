@@ -90,17 +90,17 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 
 2. Select "Web" as your delivery method:
 
-  ![Alt text](images_for_readme/aws_create_distribution_cloudfront.png)
+  ![Alt text](README_Images/aws_create_distribution_cloudfront.png)
 
 3. Create Distribution
 
   * Add your S3 bucket name to the **Origin Domain Name** field.  If you click on the field, a list will automatically appear.  It should also autofill your Origin ID.  (e.g. example-bucket)
 
-    ![Alt text](images_for_readme/aws_cloudfront_origin_settings.png)
+    ![Alt text](README_Images/aws_cloudfront_origin_settings.png)
 
   * **DELETE Origin Domain Name**. Delete the autofilled Origin Domain Name (e.g. middleman-sandbox-production.s3.amazonaws.com). Replace this with the associated S3 Bucket Static Website Endpoint (e.g. middleman-sandbox-production.s3-website-us-west-1.amazonaws.com).  This is important so your Cloudfront Url matches the static website endpoint in S3.
 
-    ![Alt text](images_for_readme/aws_s3_endpoint.png)
+    ![Alt text](README_Images/aws_s3_endpoint.png)
 
   * Under **Default Cache Behavior Settings**, click on the **Forward Headers** options list.  Click Whitelist Headers. Add Origin
 
@@ -110,7 +110,7 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 
 4. You’ll be brought to a CloudFront Distributions page.  Copy the domain name (e.g. http://dXXXXXXXXXXX.cloudfront.net/).  This will be your cloudfront asset url.
 
-  ![Alt text](images_for_readme/aws_cloudfront_dashboard.png)
+  ![Alt text](README_Images/aws_cloudfront_dashboard.png)
 
 <a name="aws_middleman_s3_gem"></a> 6. Add middleman s3 sync gem with configuration
 -------------
