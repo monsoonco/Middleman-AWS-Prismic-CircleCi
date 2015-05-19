@@ -117,11 +117,12 @@ If you're pulling down this repo and want to get it running, do the following:
 
     ![Alt text](README_Images/aws_cloudfront_origin_settings.png)
 
-  * **DELETE Origin Domain Name**. Delete the autofilled Origin Domain Name
+  **IMPORTANT: Delete the pre-autofilled Origin Domain Name**
   (e.g. middleman-sandbox-production.s3.amazonaws.com).
-  Replace this with the associated S3 Bucket Static Website Endpoint
-  (e.g. middleman-sandbox-production.s3-website-us-west-1.amazonaws.com).
-  This is important so your Cloudfront Url matches the static website endpoint in S3.
+  Replace this with the AWS S3 Bucket **Static Website Hosting Endpoint**
+  (e.g. middleman-sandbox-production.s3-website-us-west-1.amazonaws.com, see image below).
+  This is necessary so your AWS Cloudfront domain (e.g. http://dXXXXXXXXXXX.cloudfront.net/)
+  mirrors the AWS S3 static website hosting endpoint.
 
     ![Alt text](README_Images/aws_s3_endpoint.png)
 
