@@ -3,11 +3,12 @@
 Middleman AWS Prismic CircleCi
 =================
 Welcome to our Middleman-AWS-Prismic-CircleCi open source project!
-We've used this strudy setup for creating high-traffic crowdfunding sites and other static sites at Monsoon:
+We've used this strudy setup for creating high-traffic crowdfunding sites and other static sites at [Monsoon](http://www.monsoonco.com/).
+For example:
 [LunaSleep](http://lunasleep.com/),
 [Swypcard](https://www.swypcard.com/),
-[San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/),
-[Fove](http://www.getfove.com/)
+[San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/) and
+[Fove](http://www.getfove.com/).
 
 ![Alt text](README_Images/system_overview.jpg)
 ## Ingredients
@@ -35,6 +36,8 @@ We've used this strudy setup for creating high-traffic crowdfunding sites and ot
 
 <a name="web_server"></a> 1. Running the local web server
 -------------
+
+If you're pulling down this repo and want to get it running, do the following:
 
 1. **Bundle Gems**
 
@@ -68,6 +71,7 @@ We've used this strudy setup for creating high-traffic crowdfunding sites and ot
 ![Alt text](README_Images/aws_S3_logo.png)
 
 1. **Create a S3 Bucket**
+
    Go to Services > S3.  Create a Bucket in S3, add a meaningful name (e.g. myappname-production)
    and region option, e.g. Northern California).
 
@@ -79,6 +83,7 @@ We've used this strudy setup for creating high-traffic crowdfunding sites and ot
    ![alt text](/README_Images/s3_bucket.png)
 
 2. **Enable Static Website Hosting**
+
     Go to your bucket and click **Properties**.  Under **Static Website Hosting**, click **Enable website hosting**
     and add **index.html** in Index Document and **error.html** in Error Document. **Save.**
 
@@ -94,13 +99,14 @@ We've used this strudy setup for creating high-traffic crowdfunding sites and ot
 ![Alt text](README_Images/aws_cloudfront_logo.png)
 
 1. **Create a Cloudfront Distribution**
-  Go to Services > Cloudfront
+
+    Go to Services > Cloudfront
 
 2. Select "Web" as your delivery method:
 
   ![Alt text](README_Images/aws_create_distribution_cloudfront.png)
 
-3. Create Distribution
+3. **Create Distribution**
 
   * Add your S3 bucket name to the **Origin Domain Name** field.  If you click on the field, a list will automatically appear.  It should also autofill your Origin ID.  (e.g. example-bucket)
 
