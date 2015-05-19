@@ -3,12 +3,14 @@
 Middleman AWS Prismic CircleCi
 =================
 Welcome to our Middleman-AWS-Prismic-CircleCi open source project!
-We've used this strudy setup for creating high-traffic crowdfunding sites and other static sites at [Monsoon](http://www.monsoonco.com/).
-For example:
+We've used this strudy setup to create high-traffic crowdfunding sites and other static sites at [Monsoon](http://www.monsoonco.com/)
+(e.g.
 [LunaSleep](http://lunasleep.com/),
 [Swypcard](https://www.swypcard.com/),
 [San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/) and
-[Fove](http://www.getfove.com/).
+[Fove](http://www.getfove.com/)
+)
+The following provides step-by-step instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic.
 
 ![Alt text](README_Images/system_overview.jpg)
 ## Ingredients
@@ -17,8 +19,6 @@ For example:
 * [AWS S3](http://aws.amazon.com/s3/) and [AWS Cloudfront](http://aws.amazon.com/cloudfront/)
 * [CircleCI](https://circleci.com/) as a continuous integration platform for deployment to AWS and for automated testing
 * [Prismic](https://prismic.io/) for Content Management
-
-**Step-by-step instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic**
 
 ## Table of Contents
 1. [Running the local web server](#web_server)
@@ -70,7 +70,7 @@ If you're pulling down this repo and want to get it running, do the following:
 -------------
 ![Alt text](README_Images/aws_S3_logo.png)
 
-1. **Create a S3 Bucket**
+1. **Create an AWS S3 Bucket**
 
    Go to Services > S3.  Create a Bucket in S3, add a meaningful name (e.g. myappname-production)
    and region option, e.g. Northern California).
@@ -101,7 +101,7 @@ If you're pulling down this repo and want to get it running, do the following:
 -------------
 ![Alt text](README_Images/aws_cloudfront_logo.png)
 
-1. **Create a Cloudfront Distribution**
+1. **Create an AWS Cloudfront Distribution**
 
     Go to Services > Cloudfront
 
