@@ -7,7 +7,7 @@ We've used this lovely setup for creating these live projects at Monsoon:
 [LunaSleep](http://lunasleep.com/),
 [Swypcard](https://www.swypcard.com/),
 [San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/),
-[Fove](http://www.exploratorium.edu/annual-report-2014/)
+[Fove](http://www.getfove.com/)
 
 ![Alt text](README_Images/system_overview.png)
 ## Ingredients
