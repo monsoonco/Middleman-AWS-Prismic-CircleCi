@@ -93,6 +93,9 @@ If you're pulling down this repo and want to get it running, do the following:
 
     ![alt text](/README_Images/add_cors_config.png)
 
+**More on this**
+
+  * [Working with Amazon S3 Buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html)
 
 <a name="aws_cloudfront"></a> 5. Create an AWS Cloudfront Distribution
 -------------
@@ -108,11 +111,17 @@ If you're pulling down this repo and want to get it running, do the following:
 
 3. **Create Distribution**
 
-  * Add your S3 bucket name to the **Origin Domain Name** field.  If you click on the field, a list will automatically appear.  It should also autofill your Origin ID.  (e.g. example-bucket)
+  * Add your S3 bucket name to the **Origin Domain Name** field.
+  If you click on the field, a list will automatically appear.
+  It should also autofill your Origin ID.  (e.g. example-bucket)
 
     ![Alt text](README_Images/aws_cloudfront_origin_settings.png)
 
-  * **DELETE Origin Domain Name**. Delete the autofilled Origin Domain Name (e.g. middleman-sandbox-production.s3.amazonaws.com). Replace this with the associated S3 Bucket Static Website Endpoint (e.g. middleman-sandbox-production.s3-website-us-west-1.amazonaws.com).  This is important so your Cloudfront Url matches the static website endpoint in S3.
+  * **DELETE Origin Domain Name**. Delete the autofilled Origin Domain Name
+  (e.g. middleman-sandbox-production.s3.amazonaws.com).
+  Replace this with the associated S3 Bucket Static Website Endpoint
+  (e.g. middleman-sandbox-production.s3-website-us-west-1.amazonaws.com).
+  This is important so your Cloudfront Url matches the static website endpoint in S3.
 
     ![Alt text](README_Images/aws_s3_endpoint.png)
 
@@ -122,9 +131,15 @@ If you're pulling down this repo and want to get it running, do the following:
 
   * Click **Create Distribution**
 
-4. You’ll be brought to a CloudFront Distributions page.  Copy the domain name (e.g. http://dXXXXXXXXXXX.cloudfront.net/).  This will be your cloudfront asset url.
+4. You’ll be brought to a CloudFront Distributions page in which a Cloudfront domain name will be returned to you.
+  (e.g. http://dXXXXXXXXXXX.cloudfront.net/)
 
   ![Alt text](README_Images/aws_cloudfront_dashboard.png)
+
+
+**More on this:**
+
+  * [Getting Started with CloudFront](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html).
 
 <a name="aws_middleman_s3_gem"></a> 6. Add middleman s3 sync gem with configuration
 -------------
@@ -217,7 +232,7 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
   **https://circleci.com/api/v1/project/:username/:project/tree/:branch?circle-token=:token**
 
-  Docomentation resources for creating a webhook:
+  Documentation resources for creating a webhook:
 
   * [Introducing prismic.io webhooks: integration with publishing and changes events](https://blog.prismic.io/U4SxWjAAAC8AQ1-W/introducing-prismicio-webhooks-integration-with-publishing-and-changes-events)
   * [Prismic Webhooks](https://developers.prismic.io/documentation/UjBeuLGIJ3EKtgBV/repository-administrators-manual#webhooks)
