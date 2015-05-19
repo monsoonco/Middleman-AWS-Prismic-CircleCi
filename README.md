@@ -26,8 +26,8 @@ The following provides step-by-step instructions for generating a static site wi
 3. [Get AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)](#aws_iam)
 4. [Setup an AWS S3 Bucket](#aws_s3)
 5. [Create an AWS Cloudfront Distribution](#aws_cloudfront)
-6. [Add Middleman s3 sync gem with configuration](#aws_middleman_s3_gem)
-7. [Add Middleman cloudfront gem with configuration](#aws_middleman_cloudfront_gem)
+6. [Add Middleman s3 sync gem and configuration](#aws_middleman_s3_gem)
+7. [Add Middleman cloudfront gem and configuration](#aws_middleman_cloudfront_gem)
 8. [Pushing assets to AWS from your console as a first test](#aws_local_test)
 9. [CircleCI for testing and continuous deployment](#circleci)
 10. [Set Environmental Variables in CircleCi](#circleci_vars)
@@ -142,7 +142,7 @@ If you're pulling down this repo and want to get it running, do the following:
 
   * [Getting Started with CloudFront](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html).
 
-<a name="aws_middleman_s3_gem"></a> 6. Add middleman s3 sync gem with configuration
+<a name="aws_middleman_s3_gem"></a> 6. Add middleman s3 sync gem and configuration
 -------------
 
 Use middeman-s3_sync gem to push assets to your AWS s3 bucket.
@@ -150,7 +150,7 @@ Use middeman-s3_sync gem to push assets to your AWS s3 bucket.
 Add [middleman-s3_sync gem](https://github.com/fredjean/middleman-s3_sync) in your Gemfile and follow configuration instructions.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb).
 
 
-<a name="aws_middleman_cloudfront_gem"></a> 7. Add middleman cloudfront gem with configuration
+<a name="aws_middleman_cloudfront_gem"></a> 7. Add middleman cloudfront gem and configuration
 -------------
 
 We're using middleman-cloudfront for AWS CloudFront cache invalidation.
@@ -159,6 +159,11 @@ Add [middleman-cloudfront gem](https://github.com/andrusha/middleman-cloudfront)
 
 You can watch invalidations processing if you go to CloudFront Distributions > Click on Cloudfront distribution ID > Invalidations tab
 
+  ![Alt text](README_Images/aws_cloudfront_invalidations.png)
+
+**More on this**
+
+  * [Invalidating Objects (Web Distributions Only)](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html)
 
 <a name="aws_local_test"></a> 8. Pushing assets to AWS from your console as a first test
 -------------
