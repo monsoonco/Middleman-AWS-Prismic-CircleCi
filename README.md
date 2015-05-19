@@ -3,13 +3,13 @@
 Middleman AWS Prismic CircleCi
 =================
 Welcome to our Middleman-AWS-Prismic-CircleCi open source project!
-We've used this lovely setup for creating these live projects at Monsoon:
+We've used this strudy setup for creating high-traffic crowdfunding sites and other static sites at Monsoon:
 [LunaSleep](http://lunasleep.com/),
 [Swypcard](https://www.swypcard.com/),
 [San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/),
 [Fove](http://www.getfove.com/)
 
-![Alt text](README_Images/system_overview.png)
+![Alt text](README_Images/system_overview.jpg)
 ## Ingredients
 * [Middleman](https://middlemanapp.com/)
 * Middleman gems [Middleman S3 Sync](https://github.com/fredjean/middleman-s3_sync) and [Middleman Cloudfront](https://github.com/andrusha/middleman-cloudfront)
@@ -28,7 +28,7 @@ We've used this lovely setup for creating these live projects at Monsoon:
 6. [Add Middleman s3 sync gem with configuration](#aws_middleman_s3_gem)
 7. [Add Middleman cloudfront gem with configuration](#aws_middleman_cloudfront_gem)
 8. [Pushing assets to AWS from your console as a first test](#aws_local_test)
-9. [CircleCI for testing and application deployment](#circleci)
+9. [CircleCI for testing and continuous deployment](#circleci)
 10. [Set Environmental Variables in CircleCi](#circleci_vars)
 11. [Prismic Content Management](#prismic)
 12. Launch Day in AWS
@@ -66,6 +66,7 @@ We've used this lovely setup for creating these live projects at Monsoon:
 <a name="aws_s3"></a> 4. Setup an AWS S3 Bucket
 -------------
 ![Alt text](README_Images/aws_S3_logo.png)
+
 1. **Create a S3 Bucket**
    Go to Services > S3.  Create a Bucket in S3, add a meaningful name (e.g. myappname-production)
    and region option, e.g. Northern California).
@@ -166,7 +167,7 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
    <code> PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID=XXXXXXXXXXX bundle exec middleman invalidate </code>
 
 
-<a name="circleci"></a> 9. CircleCI for testing and application deployment
+<a name="circleci"></a> 9. CircleCI for testing and continuous deployment
 -------------
 
 1. Setup your Github account with [CircleCi](https://circleci.com/).
