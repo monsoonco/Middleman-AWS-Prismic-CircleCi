@@ -32,7 +32,7 @@ The following provides step-by-step instructions for generating a static site wi
 9. [CircleCI for testing and continuous deployment](#circleci)
 10. [Set Environmental Variables in CircleCi](#circleci_vars)
 11. [Prismic Content Management](#prismic)
-12. Launch Day in AWS
+12. [Launch in AWS](#launch)
 
 <a name="web_server"></a> 1. Running the local web server
 -------------
@@ -223,6 +223,14 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 </code></pre>
 
+
+<a name="circleci_vars"></a> 10. Set Environmental Variables in CircleCi
+
+  Add the following AWS environmental variables in CircleCi
+  (the same as in [Pushing assets to AWS from your console as a first test](#aws_local_test) section )
+
+  ![Alt text](README_Images/circleci_env_vars.png)
+
 <a name="prismic"></a> 10. Prismic Content Management and Adding a Webhook with CircleCi
 -------------
 
@@ -244,4 +252,4 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
   * [Prismic Webhooks](https://developers.prismic.io/documentation/UjBeuLGIJ3EKtgBV/repository-administrators-manual#webhooks)
   * [CircleCi: Trigger a new build](https://circleci.com/docs/api#new-build)
 
-
+<a name="launch"></a> 12. Launch in AWS
