@@ -11,6 +11,9 @@ deployment:
   production:
     branch: master
     commands:
+      # Middleman build
       - bundle exec middleman build --verbose
+      # Upload data to AWS S3 (See gem 'middleman-s3_sync')
       - bundle exec middleman s3_sync --bucket=middleman-sandbox-production
+      # Trigger AWS CloudFront cache invalidation (See gem 'middleman-cloudfront')
       - PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID= bundle exec middleman invalidate

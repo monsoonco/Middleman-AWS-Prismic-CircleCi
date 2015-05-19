@@ -3,8 +3,13 @@
 Middleman AWS Prismic CircleCi
 =================
 Welcome to our Middleman-AWS-Prismic-CircleCi open source project!
-We've used this lovely setup for creating these live projects at Monsoon: [LunaSleep](http://lunasleep.com/), [Swypcard](https://www.swypcard.com/), [San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/)
+We've used this lovely setup for creating these live projects at Monsoon:
+[LunaSleep](http://lunasleep.com/),
+[Swypcard](https://www.swypcard.com/),
+[San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/),
+[Fove](http://www.exploratorium.edu/annual-report-2014/)
 
+![Alt text](README_Images/system_overview.png)
 ## Ingredients
 * [Middleman](https://middlemanapp.com/)
 * Middleman gems [Middleman S3 Sync](https://github.com/fredjean/middleman-s3_sync) and [Middleman Cloudfront](https://github.com/andrusha/middleman-cloudfront)
@@ -12,7 +17,7 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 * [CircleCI](https://circleci.com/) as a continuous integration platform for deployment to AWS and for automated testing
 * [Prismic](https://prismic.io/) for Content Management
 
-**The following are instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic from scratch.**
+**Step-by-step instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic**
 
 ## Table of Contents
 1. [Running the local web server](#web_server)
@@ -89,7 +94,6 @@ We've used this lovely setup for creating these live projects at Monsoon: [LunaS
 
 1. **Create a Cloudfront Distribution**
   Go to Services > Cloudfront
-  ![Alt text](README_Images/aws_cloudfront_logo.png)
 
 2. Select "Web" as your delivery method:
 
