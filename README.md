@@ -13,7 +13,7 @@ and other static sites
 (e.g.
 [San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/)
 )
-at [Monsoon](http://www.monsoonco.com/)
+at [Monsoon](http://www.monsoonco.com/).
 The following provides step-by-step instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic.
 
 ![Alt text](README_Images/system_overview.jpg)
@@ -153,6 +153,21 @@ Use middeman-s3_sync gem to push assets to your AWS s3 bucket.
 
 Add [middleman-s3_sync gem](https://github.com/fredjean/middleman-s3_sync) in your Gemfile and follow configuration instructions.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb).
 
+   <pre><code>
+
+    activate :s3_sync do |s3_sync|
+      # The name of the S3 bucket you are targeting. This is globally unique.
+      s3_sync.bucket                     = ENV['AWS_S3_BUCKET_NAME']
+      # The AWS region code for your bucket.
+      # For region codes: http://www.bucketexplorer.com/documentation/amazon-s3--amazon-s3-buckets-and-regions.html
+      s3_sync.region                     = ENV['AWS_REGION']
+      s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
+      s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_KEY']
+      #s3_sync.delete                     = true # We delete stray files by default.
+      #s3_sync.after_build                = true # We do not chain after the build step by default.
+    end
+
+    </code></pre>
 
 <a name="aws_middleman_cloudfront_gem"></a> 7. Add middleman cloudfront gem and configuration
 -------------
@@ -160,6 +175,22 @@ Add [middleman-s3_sync gem](https://github.com/fredjean/middleman-s3_sync) in yo
 We're using middleman-cloudfront for AWS CloudFront cache invalidation.
 
 Add [middleman-cloudfront gem](https://github.com/andrusha/middleman-cloudfront) and follow configuration instructions.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb).
+
+   <pre><code>
+
+      activate :cloudfront do |cf|
+        cf.access_key_id                   = ENV['AWS_ACCESS_KEY_ID']
+        cf.secret_access_key               = ENV['AWS_SECRET_KEY']
+        cf.distribution_id                 = ENV['PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID']
+        cf.filter                          = /\.html$/i
+        #cf.after_build                     = false  # default is false
+      end
+
+      after_s3_sync do |files_by_status|
+        invalidate files_by_status[:updated]
+      end
+
+    </code></pre>
 
 You can watch invalidations processing if you go to CloudFront Distributions > Click on Cloudfront distribution ID > Invalidations tab
 
