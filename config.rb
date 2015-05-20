@@ -71,6 +71,24 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
+# Example Prismic Api Query:
+
+# api = Prismic.api('https://prismic-project-example.prismic.io/api')
+#   # Prismic response for all blogs
+#   response_news = api
+#    .form('everything')
+#    .query('[[:d = at(document.type, "document-mask-name")]]')
+#    .submit(api.master_ref)
+#
+# @something_to_put_in_view = response.results
+
+
+api = Prismic.api('https://prismic-project-example.prismic.io/api')
+  # Prismic response for all blogs
+  response_news = api
+   .form('everything')
+   .query('[[:d = at(document.type, "document-mask-name")]]')
+   .submit(api.master_ref)
 # Uncomment the line below to test deployment to AWS from your console
 # ENV = YAML::load(File.open('aws.yml'))
 

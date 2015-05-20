@@ -266,7 +266,18 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 1. Follow instructions in [Prismic](https://prismic.io/) to create a Document Mask and create content.
 
-2. In this example, we're using ruby to add Prismic Content to view.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb) as an example.
+2. See Prismic's [documentation](https://developers.prismic.io/documentation/VBgeDDYAADMAz2Rw/developers-manual) for adding the API object and querying your Prismic repository with Ruby.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb) as an example.
+
+<pre><code>
+    api = Prismic.api('https://prismic-project-example.prismic.io/api')
+    response = api
+     .form('everything')
+     .query('[[:d = at(document.type, "document-mask-name")]]')
+     .submit(api.master_ref)
+
+    @something_to_put_in_view = response.results
+
+</code></pre>
 
 3. Go to your prismic account.  Settings > Webhooks.
 
