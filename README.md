@@ -33,7 +33,7 @@ The following provides step-by-step instructions for generating a static site wi
 6. [Add Middleman s3 sync gem and configuration](#aws_middleman_s3_gem)
 7. [Add Middleman cloudfront gem and configuration](#aws_middleman_cloudfront_gem)
 8. [Pushing assets to AWS from your console as a first test](#aws_local_test)
-9. [CircleCI for testing and continuous deployment](#circleci)
+9. [CircleCI for continuous deployment](#circleci)
 10. [Set Environmental Variables in CircleCi](#circleci_vars)
 11. [Prismic Content Management](#prismic)
 12. [Launch in AWS](#launch)
@@ -242,18 +242,25 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
    <code> PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID=XXXXXXXXXXX bundle exec middleman invalidate </code>
 
 
-<a name="circleci"></a> 9. CircleCI for testing and continuous deployment
+<a name="circleci"></a> 9. CircleCi for continuous deployment
 -------------
+
+CircleCi will run deployment commands only when changes are merged into the branch
+specified in circle.yml (e.g. <code> branch:master </code>).
 
 1. Setup your Github account with [CircleCi](https://circleci.com/).
 2. In CircleCi, add your project/repo.
 3. Create a [circle.yml](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/circle.yml) file in the root of your repo.
 
 <pre><code>
-
   dependencies:
     pre:
       - bundle install
+
+# To speed things up, you can also cache directories.  Uncomment this and replace this with code above.
+# dependencies:
+#   cache_directories:
+#     - "~/.rvm/gems/ruby-2.0.0-p451"
 
   deployment:
     production:
