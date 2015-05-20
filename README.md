@@ -180,7 +180,6 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
       AWS_REGION: ''
       AWS_ACCESS_KEY_ID: ''
       AWS_SECRET_KEY: ''
-      STAGING_CLOUDFRONT_DISTRIBUTION_ID: ''
       PRODUCTION_CLOUD_DISTRIBUTION_ID: ''
 
     </code></pre>
@@ -201,7 +200,7 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 2. In CircleCi, add your project/repo.
 3. Add environmental variables for each respective project.  Go to your project, click the gear icon in upper right hand corner, Tweaks > Environmental variables.
    Add AWS_S3_BUCKET_NAME, AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_KEY, and PRODUCTION_CLOUD_DISTRIBUTION_ID.
-4. Create a [circle.yml]() file in the root of your repo.
+4. Create a [circle.yml](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/circle.yml) file in the root of your repo.
 
 <pre><code>
 
@@ -225,13 +224,14 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 
 <a name="circleci_vars"></a> 10. Set Environmental Variables in CircleCi
+-------------
 
   Add the following AWS environmental variables in CircleCi
   (the same as in [Pushing assets to AWS from your console as a first test](#aws_local_test) section )
 
   ![Alt text](README_Images/circleci_env_vars.png)
 
-<a name="prismic"></a> 10. Prismic Content Management and Adding a Webhook with CircleCi
+<a name="prismic"></a> 11. Prismic Content Management and Adding a Webhook with CircleCi
 -------------
 
 1. Follow instructions in [Prismic](https://prismic.io/) to create a Document Mask and create content.
@@ -253,3 +253,4 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
   * [CircleCi: Trigger a new build](https://circleci.com/docs/api#new-build)
 
 <a name="launch"></a> 12. Launch in AWS
+-------------
