@@ -66,6 +66,8 @@ If you're pulling down this repo and want to get it running, do the following:
 <a name="aws_iam"></a> 3. Grab AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)
 -------------
 
+![Alt text](README_Images/aws_identity.png)
+
 1. After an AWS account has been setup, go to AWS IAM
 
 
