@@ -74,7 +74,7 @@ Here's a basic example of adding AdministratorAccess to a User (see below).
 You'll need to save your AWS Keys for setting environmental variables in [CircleCi](#circleci_vars) (AWS_ACCESS_KEY_ID, AWS_SECRET_KEY).
 
   ![Alt text](README_Images/1_aws_iam_create_user.png)
-  ![Alt text](README_Images/2_aws_gen_access_key.png)
+  ![Alt text](README_Images/2_aws_iam_gen_access_key.png)
   ![Alt text](README_Images/3_aws_iam_download_creds.png)
   ![Alt text](README_Images/4_aws_iam_attach_user_policy.png)
   ![Alt text](README_Images/5_aws_iam_admin_access.png)
