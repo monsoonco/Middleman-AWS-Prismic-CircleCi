@@ -68,10 +68,10 @@ If you're pulling down this repo and want to get it running, do the following:
 
 ![Alt text](README_Images/aws_identity.png)
 
-1. After an AWS account has been setup, go to AWS IAM to set permission and download AWS keys.
-You can set specific permissions to Users or Groups as needed (Read more about it [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html)).
+1. After an AWS account has been setup, go to AWS IAM to set permission and download AWS keys (AWS access key id and AWS secret key).
+You can set specific permissions to Users or Groups as needed (read more about it [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html)).
 Here's a basic example of adding AdministratorAccess to a User (see below).
-You'll need to save your AWS Keys for setting environmental variables in [CircleCi](#circleci_vars).
+You'll need to save your AWS Keys for setting environmental variables in [CircleCi](#circleci_vars) (AWS_ACCESS_KEY_ID, AWS_SECRET_KEY).
 
   ![Alt text](README_Images/1_aws_iam_create_user.png)
   ![Alt text](README_Images/2_aws_gen_access_key.png)
