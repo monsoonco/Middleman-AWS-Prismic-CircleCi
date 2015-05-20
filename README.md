@@ -153,7 +153,7 @@ Use middeman-s3_sync gem to push assets to your AWS s3 bucket.
 
 Add [middleman-s3_sync gem](https://github.com/fredjean/middleman-s3_sync) in your Gemfile and follow configuration instructions.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb).
 
-   <pre><code>
+<pre><code>
 
     activate :s3_sync do |s3_sync|
       # The name of the S3 bucket you are targeting. This is globally unique.
@@ -167,17 +167,14 @@ Add [middleman-s3_sync gem](https://github.com/fredjean/middleman-s3_sync) in yo
       #s3_sync.after_build                = true # We do not chain after the build step by default.
     end
 
-    </code></pre>
+</code></pre>
 
 <a name="aws_middleman_cloudfront_gem"></a> 7. Add middleman cloudfront gem and configuration
 -------------
-
 We're using middleman-cloudfront for AWS CloudFront cache invalidation.
 
 Add [middleman-cloudfront gem](https://github.com/andrusha/middleman-cloudfront) and follow configuration instructions.  See [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb).
-
-   <pre><code>
-
+<pre><code>
       activate :cloudfront do |cf|
         cf.access_key_id                   = ENV['AWS_ACCESS_KEY_ID']
         cf.secret_access_key               = ENV['AWS_SECRET_KEY']
@@ -189,8 +186,7 @@ Add [middleman-cloudfront gem](https://github.com/andrusha/middleman-cloudfront)
       after_s3_sync do |files_by_status|
         invalidate files_by_status[:updated]
       end
-
-    </code></pre>
+</code></pre>
 
 You can watch invalidations processing if you go to CloudFront Distributions > Click on Cloudfront distribution ID > Invalidations tab
 
