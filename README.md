@@ -3,13 +3,17 @@
 Middleman AWS Prismic CircleCi
 =================
 Welcome to our Middleman-AWS-Prismic-CircleCi open source project!
-We've used this strudy setup to create high-traffic crowdfunding sites and other static sites at [Monsoon](http://www.monsoonco.com/)
+We've used this  setup to create high-traffic crowdfunding sites
 (e.g.
 [LunaSleep](http://lunasleep.com/),
 [Swypcard](https://www.swypcard.com/),
-[San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/) and
 [Fove](http://www.getfove.com/)
 )
+and other static sites
+(e.g.
+[San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/)
+)
+at [Monsoon](http://www.monsoonco.com/)
 The following provides step-by-step instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic.
 
 ![Alt text](README_Images/system_overview.jpg)
@@ -239,11 +243,12 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 3. Go to your prismic account.  Settings > Webhooks.
 
-4. Go to CircleCi and create an API token (Settings > API Tokens  in CircleCi). Create a token for the prismic webhook.
+4. Go to CircleCi and create an API token (Settings > API Tokens). Create a token for the prismic webhook.
 
   ![Alt text](README_Images/circleci_api_token.png)
 
-4. Add a POST request url from CircleCI to trigger a build in CircleCi everytime someone updates content in Prismic. CircleCi enables you to trigger a build with the following params:
+4. Add a POST request url (see below) from CircleCI in the Webhooks section of Prismic
+ to trigger a build in CircleCi.  This will trigger a build targeted at the specified Github branch every time a document is published.
 
   **https://circleci.com/api/v1/project/:username/:project/tree/:branch?circle-token=:token**
 
