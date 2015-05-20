@@ -156,7 +156,7 @@ Add [middleman-s3_sync gem](https://github.com/fredjean/middleman-s3_sync) in yo
 <pre><code>
 
     activate :s3_sync do |s3_sync|
-      # The name of the S3 bucket you are targeting. This is globally unique.
+      # The name of the S3 bucket you are targeting.
       s3_sync.bucket                     = ENV['AWS_S3_BUCKET_NAME']
       # The AWS region code for your bucket.
       # For region codes: http://www.bucketexplorer.com/documentation/amazon-s3--amazon-s3-buckets-and-regions.html
@@ -229,9 +229,7 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 1. Setup your Github account with [CircleCi](https://circleci.com/).
 2. In CircleCi, add your project/repo.
-3. Add environmental variables for each respective project.  Go to your project, click the gear icon in upper right hand corner, Tweaks > Environmental variables.
-   Add AWS_S3_BUCKET_NAME, AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_KEY, and PRODUCTION_CLOUD_DISTRIBUTION_ID.
-4. Create a [circle.yml](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/circle.yml) file in the root of your repo.
+3. Create a [circle.yml](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/circle.yml) file in the root of your repo.
 
 <pre><code>
 
