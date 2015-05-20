@@ -27,7 +27,7 @@ The following provides step-by-step instructions for generating a static site wi
 ## Table of Contents
 1. [Running the local web server](#web_server)
 2. [Create a new Middleman Site](#new_middleman_project)
-3. [Get AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)](#aws_iam)
+3. [Set permissions and download AWS access keys in AWS Identity & Access Management (IAM)](#aws_iam)
 4. [Setup an AWS S3 Bucket](#aws_s3)
 5. [Create an AWS Cloudfront Distribution](#aws_cloudfront)
 6. [Add Middleman s3 sync gem and configuration](#aws_middleman_s3_gem)
@@ -63,14 +63,21 @@ If you're pulling down this repo and want to get it running, do the following:
 1. Follow steps to [install Middleman](https://middlemanapp.com/basics/install/) and [start a new site](https://middlemanapp.com/basics/start_new_site/)
 
 
-<a name="aws_iam"></a> 3. Grab AWS access keys and Attach a Policy in AWS Identity & Access Management (IAM)
+<a name="aws_iam"></a> 3. Set permissions and download AWS access keys in AWS Identity & Access Management (IAM)
 -------------
 
 ![Alt text](README_Images/aws_identity.png)
 
-1. After an AWS account has been setup, go to AWS IAM
+1. After an AWS account has been setup, go to AWS IAM to set permission and download AWS keys.
+You can set specific permissions to Users or Groups as needed (Read more about it [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html)).
+Here's a basic example of adding AdministratorAccess to a User (see below).
+You'll need to save your AWS Keys for setting environmental variables in [CircleCi](#circleci_vars).
 
-
+  ![Alt text](README_Images/1_aws_iam_create_user.png)
+  ![Alt text](README_Images/2_aws_gen_access_key.png)
+  ![Alt text](README_Images/3_aws_iam_download_creds.png)
+  ![Alt text](README_Images/4_aws_iam_attach_user_policy.png)
+  ![Alt text](README_Images/5_aws_iam_admin_access.png)
 
 <a name="aws_s3"></a> 4. Setup an AWS S3 Bucket
 -------------
