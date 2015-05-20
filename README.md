@@ -223,15 +223,14 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 </code></pre>
 
 
-<a name="circleci_vars"></a> 10. Set Environmental Variables in CircleCi
+<a name="circleci_vars"></a> 10. Set environmental variables in CircleCi
 -------------
 
-  Add the following AWS environmental variables in CircleCi
-  (the same as in [Pushing assets to AWS from your console as a first test](#aws_local_test) section )
+  Add the following AWS environmental variables required for continuous deployment in CircleCi
 
   ![Alt text](README_Images/circleci_env_vars.png)
 
-<a name="prismic"></a> 11. Prismic Content Management and Adding a Webhook with CircleCi
+<a name="prismic"></a> 11. Prismic content management and adding a webhook with CircleCi
 -------------
 
 1. Follow instructions in [Prismic](https://prismic.io/) to create a Document Mask and create content.
@@ -254,3 +253,13 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 <a name="launch"></a> 12. Launch in AWS
 -------------
+
+You may use your own DNS provider (e.g. GoDaddy) vs Amazon's [Route 53 DNS manager](http://aws.amazon.com/route53/).
+Add your official domain name to Alternate Domain Names (CNAMEs)
+under the General tab in Cloudfront Distributions. Make sure you place the urls on seperate lines.
+
+![Alt text](README_Images/aws_launch_alternate_domain.png)
+
+**More on this**
+
+  * [Using Alternate Domain Names (CNAMEs)](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html)
