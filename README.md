@@ -241,11 +241,15 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
 
 4. Go to CircleCi and create an API token (Settings > API Tokens  in CircleCi). Create a token for the prismic webhook.
 
+  ![Alt text](README_Images/circleci_api_token.png)
+
 4. Add a POST request url from CircleCI to trigger a build in CircleCi everytime someone updates content in Prismic. CircleCi enables you to trigger a build with the following params:
 
   **https://circleci.com/api/v1/project/:username/:project/tree/:branch?circle-token=:token**
 
-  Documentation resources for creating a webhook:
+  ![Alt text](README_Images/prismic_webhooks.png)
+
+  More documentation resources on creating a webhook:
 
   * [Introducing prismic.io webhooks: integration with publishing and changes events](https://blog.prismic.io/U4SxWjAAAC8AQ1-W/introducing-prismicio-webhooks-integration-with-publishing-and-changes-events)
   * [Prismic Webhooks](https://developers.prismic.io/documentation/UjBeuLGIJ3EKtgBV/repository-administrators-manual#webhooks)
