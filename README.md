@@ -224,13 +224,11 @@ If you need to experiment with pushing assets to AWS S3 locally, you can do the 
    * Uncomment  <code> ENV = YAML::load(File.open('aws.yml')) </code> in [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb)
 
    <pre><code>
-
       AWS_S3_BUCKET_NAME: ''
       AWS_REGION: ''
       AWS_ACCESS_KEY_ID: ''
       AWS_SECRET_KEY: ''
       PRODUCTION_CLOUD_DISTRIBUTION_ID: ''
-
     </code></pre>
 
    * Run these commands to push assets to AWS middleman-sandbox-staging bucket
@@ -299,7 +297,6 @@ specified in circle.yml (e.g. <code> branch:master </code>).
      .submit(api.master_ref)
 
     @something_to_put_in_view = response.results
-
 </code></pre>
 
 3. Go to your prismic account.  Settings > Webhooks.

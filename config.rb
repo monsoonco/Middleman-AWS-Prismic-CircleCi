@@ -47,11 +47,9 @@
 #   end
 # end
 
-set :css_dir, 'stylesheets'
-
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
+set :css_dir, 'assets/stylesheets'
+set :js_dir, 'assets/javascripts'
+set :images_dir, 'assets/images'
 
 # Build-specific configuration
 configure :build do
@@ -82,13 +80,6 @@ end
 #
 # @something_to_put_in_view = response.results
 
-
-api = Prismic.api('https://prismic-project-example.prismic.io/api')
-  # Prismic response for all blogs
-  response_news = api
-   .form('everything')
-   .query('[[:d = at(document.type, "document-mask-name")]]')
-   .submit(api.master_ref)
 # Uncomment the line below to test deployment to AWS from your console
 # ENV = YAML::load(File.open('aws.yml'))
 
@@ -108,7 +99,6 @@ end
 
 # CloudFront cache invalidation
 # See middleman-cloudfront gem documentation: https://github.com/andrusha/middleman-cloudfront
-
 
 activate :cloudfront do |cf|
   cf.access_key_id                   = ENV['AWS_ACCESS_KEY_ID']
