@@ -1,18 +1,16 @@
 [![alt text](/README_Images/monsoon_.png)](http://www.monsoonco.com/)
 
-Middleman AWS Prismic CircleCi
+Rainfactory's Battleborn Static Site Setup
 =================
+## Middleman AWS Prismic CircleCi
+
 Welcome to our Middleman-AWS-Prismic-CircleCi open source project!
-We've used this  setup to create high-traffic crowdfunding sites
+We've used this setup to create high-traffic crowdfunding sites for [Rainfactory](http://www.rainfactory.com/)
 (e.g.
 [LunaSleep](http://lunasleep.com/),
 [Swypcard](https://www.swypcard.com/),
 [Fove](http://www.getfove.com/)
-)
-and other static sites
-(e.g.
-[San Francisco Exploratorium](http://www.exploratorium.edu/annual-report-2014/)
-)
+).
 at [Monsoon](http://www.monsoonco.com/).
 The following provides step-by-step instructions for generating a static site with Middleman, Amazon Web Services, CircleCI and Prismic.
 
