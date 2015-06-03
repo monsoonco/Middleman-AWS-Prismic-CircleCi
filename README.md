@@ -1,6 +1,6 @@
 [![alt text](/README_Images/monsoon_.png)](http://www.monsoonco.com/)
 
-Rainfactory's Battleborn Static Site Setup
+Rainfactory's Speedy and Traffic Resilient Static Site Setup
 =================
 ### :heart: Middleman :heart: CircleCi :heart: AWS :heart: Prismic
 
