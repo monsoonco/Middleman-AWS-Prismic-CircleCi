@@ -217,7 +217,7 @@ You can watch invalidations processing if you go to CloudFront Distributions > C
 
 If you need to experiment with pushing assets to AWS S3 locally, you can do the following:
 
-   * Create an aws.yml file at the root of the application.
+   * Create an aws.yml file at the root of the application.  Note that this file will be ignored for security (See [.gitignore](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/.gitignore))
    * Add environmental variables from AWS LastPass notes to aws.yml
    * Uncomment  <code> ENV = YAML::load(File.open('aws.yml')) </code> in [config.rb](https://github.com/monsoonco/Middleman-AWS-Prismic-CircleCi/blob/master/config.rb)
 
@@ -276,7 +276,7 @@ specified in circle.yml (e.g. <code> branch:master </code>).
 <a name="circleci_vars"></a> 10. Set environmental variables in CircleCi
 -------------
 
-  Add the following AWS environmental variables required for continuous deployment in CircleCi
+  Add the following AWS environmental variables required for continuous deployment in CircleCi.  In this case, we're pushing assets to your AWS S3 bucket and invalidating the cache in AWS Cloudfront.
 
   ![Alt text](README_Images/circleci_env_vars.png)
 
@@ -330,7 +330,9 @@ under the General tab in Cloudfront Distributions. Make sure you place the urls 
   * [Using Alternate Domain Names (CNAMEs)](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html)
 
 
-The MIT License (MIT)
+
+
+**The MIT License (MIT)**
 
 Copyright (c) <year> <copyright holders>
 
